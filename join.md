@@ -8,9 +8,11 @@
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
     - SELECT * FROM `teachers` INNER JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`course_id` INNER JOIN `courses` ON `courses`.`id` = `course_teacher`.`course_id` WHERE `teachers`.`id`= 44;  
-     
+
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
+    - SELECT * FROM `students` INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id` INNER JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id` ORDER BY `students`.`name`, `students`.`surname` ASC; 
+    
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
